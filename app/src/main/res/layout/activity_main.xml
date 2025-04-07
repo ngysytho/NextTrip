@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginBottom="4dp"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/white"
         app:itemIconTint="@color/nav_item_color_state"
         app:itemTextColor="@color/nav_item_color_state"
         app:layout_constraintBottom_toBottomOf="parent"
