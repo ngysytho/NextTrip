@@ -1,12 +1,18 @@
 package edu.poly.nexttrip
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import java.util.concurrent.Executor
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,5 +22,29 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val ds_main = mutableListOf<main_outdate>()
+        ds_main.add(main_outdate(R.drawable.main_canhanhoa))
+        ds_main.add(main_outdate(R.drawable.main_nuocuong))
+        ds_main.add(main_outdate(R.drawable.main_nhahang_1))
+        ds_main.add(main_outdate(R.drawable.main_batxe))
+
+        val main_adapter1 = main_RvAdapter(
+            ds_main, object : main_RvInterface {
+                override fun main_OnClickchucnang(pos: Int) {
+                    Toast.makeText(this@MainActivity, "ban da click vao", Toast.LENGTH_SHORT).show()
+                }
+            },
+            function = {}
+        )
+
+        val main_Recyleview = findViewById<RecyclerView>(R.id.main_recyclerView)
+        main_Recyleview.adapter =main_adapter1
+        main_Recyleview.layoutManager = LinearLayoutManager(
+            this,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+
+
     }
 }
