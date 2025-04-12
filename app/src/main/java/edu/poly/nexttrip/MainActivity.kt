@@ -29,6 +29,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
+
+
+
     private fun XulyRecyleview1() {
         val ds_main = mutableListOf<main_outdate>()
         ds_main.add(main_outdate(R.drawable.main_canhanhoa))
