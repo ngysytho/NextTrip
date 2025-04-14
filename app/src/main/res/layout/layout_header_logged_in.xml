@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#2D2F53"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/userName"
+        android:text="Chào mừng, Tho"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_below="@id/userName"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="★ VIP"
+            android:textColor="@android:color/white"
+            android:background="#000000"
+            android:padding="4dp"
+            android:textSize="12sp"
+            android:layout_marginEnd="4dp"/>
+
+        <TextView
+            android:text="Bronze"
+            android:textColor="@android:color/white"
+            android:background="#CD7F32"
+            android:padding="4dp"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/logout"
+        android:text="Thoát"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
+import edu.poly.nexttrip.Cart_Fragment
+import edu.poly.nexttrip.MoreFragment
 import edu.poly.nexttrip.MyTrip_Fragment
 import edu.poly.nexttrip.R
 
@@ -27,14 +29,14 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(MyTrip_Fragment()) // ví dụ Fragment khác
                     true
                 }
-//                R.id.nav_cart -> {
-//                    loadFragment(CartFragment()) // ví dụ Fragment khác
-//                    true
-//                }
-//                R.id.nav_more -> {
-//                    loadFragment(MoreFragment()) // ví dụ Fragment khác
-//                    true
-//                }
+                R.id.nav_cart -> {
+                    loadFragment(Cart_Fragment()) // ví dụ Fragment khác
+                    true
+                }
+                R.id.nav_more -> {
+                    loadFragment(MoreFragment()) // ví dụ Fragment khác
+                    true
+                }
                 else -> false
             }
         }

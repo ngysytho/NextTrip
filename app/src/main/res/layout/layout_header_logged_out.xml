@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#3C83F0"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/timeText"
+        android:text="21:23"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:text="Tham gia Agoda ngay"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_below="@id/timeText"
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:text="Tiếp cận các ưu đãi chỉ dành cho thành viên"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_below="@id/title"
+        android:layout_marginTop="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="Đăng nhập/Đăng ký"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

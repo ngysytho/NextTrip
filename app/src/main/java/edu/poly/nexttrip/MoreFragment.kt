@@ -1,59 +1,87 @@
 package edu.poly.nexttrip
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.view.*
+import android.widget.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MoreFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MoreFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: MoreAdapter
+    private lateinit var headerContainer: FrameLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_more_, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment More_Fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MoreFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        headerContainer = view.findViewById(R.id.headerContainer)
+        recyclerView = view.findViewById(R.id.recyclerMore)
+
+        setupHeader()
+        setupRecycler()
+    }
+
+    private fun setupHeader() {
+        val prefs = requireContext().getSharedPreferences("user_session", Context.MODE_PRIVATE)
+        val isLoggedIn = prefs.getBoolean("isLoggedIn", false)
+
+        val headerView = if (isLoggedIn) {
+            layoutInflater.inflate(R.layout.layout_header_logged_in, headerContainer, false)
+        } else {
+            layoutInflater.inflate(R.layout.layout_header_logged_out, headerContainer, false)
+        }
+
+        headerContainer.removeAllViews()
+        headerContainer.addView(headerView)
+
+        if (!isLoggedIn) {
+            val loginBtn = headerView.findViewById<Button>(R.id.btnLogin)
+            loginBtn.setOnClickListener {
+                startActivity(Intent(requireContext(), LoginActivity::class.java))
             }
+        } else {
+            val logoutBtn = headerView.findViewById<TextView>(R.id.logout)
+            logoutBtn.setOnClickListener {
+                prefs.edit().clear().apply()
+                Toast.makeText(requireContext(), "Đã đăng xuất", Toast.LENGTH_SHORT).show()
+                setupHeader() // reload lại header sau khi logout
+            }
+        }
+    }
+
+    private fun setupRecycler() {
+        val items = listOf(
+            MoreItem(R.drawable.main_more, "Danh sách yêu thích"),
+            MoreItem(R.drawable.main_more, "AgodaVIP"),
+            MoreItem(R.drawable.main_more, "Thông tin thẻ đã lưu của tôi"),
+            MoreItem(R.drawable.main_more, "Tiền Agoda", "0 đ"),
+            MoreItem(R.drawable.main_more, "Cashback", "0 đ"),
+            MoreItem(R.drawable.main_more, "PointsMAX"),
+            MoreItem(R.drawable.main_more, "Khuyến mãi"),
+            MoreItem(R.drawable.main_more, "Hộp thư"),
+            MoreItem(R.drawable.main_more, "Nhận xét của tôi"),
+            MoreItem(R.drawable.main_more, "Ngôn ngữ", "Tiếng Việt 🇻🇳"),
+            MoreItem(R.drawable.main_more, "Giá hiển thị", "VND"),
+            MoreItem(R.drawable.main_more, "Km hay dặm?", "km"),
+            MoreItem(R.drawable.main_more, "Thông báo")
+        )
+
+        adapter = MoreAdapter(items) {
+            Toast.makeText(requireContext(), "Chọn: ${it.title}", Toast.LENGTH_SHORT).show()
+        }
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
     }
 }
