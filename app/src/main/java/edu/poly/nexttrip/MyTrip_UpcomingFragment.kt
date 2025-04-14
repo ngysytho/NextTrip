@@ -9,6 +9,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.poly.nexttrip.My_Trip_Upcomming_TripAdapter
+import edu.poly.nexttrip.My_Trip_Upcomming_TripModel
 
 class MyTrip_UpcomingFragment : Fragment() {
 
@@ -57,3 +59,4 @@ class MyTrip_UpcomingFragment : Fragment() {
         return emptyList() // thử thay bằng danh sách giả lập nếu cần test phần có dữ liệu
     }
 }
+

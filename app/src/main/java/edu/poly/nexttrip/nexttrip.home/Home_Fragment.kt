@@ -1,4 +1,5 @@
-package edu.poly.nexttrip
+package edu.poly.nexttrip.nexttrip.home
+
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.poly.nexttrip.R
 
 class HomeFragment : Fragment() {
 

@@ -1,9 +1,11 @@
-package edu.poly.nexttrip
+package edu.poly.nexttrip.nexttrip.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
+import edu.poly.nexttrip.MyTrip_Fragment
+import edu.poly.nexttrip.R
 
 class MainActivity : AppCompatActivity() {
 

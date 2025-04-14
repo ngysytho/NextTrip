@@ -1,12 +1,13 @@
-package edu.poly.nexttrip
+package edu.poly.nexttrip.nexttrip.home
+
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import edu.poly.nexttrip.R
 
 class main_RvAdapter(
     var main_ds: List<main_outdate>,

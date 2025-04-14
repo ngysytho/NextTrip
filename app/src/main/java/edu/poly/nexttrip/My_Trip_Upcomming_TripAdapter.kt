@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import edu.poly.nexttrip.My_Trip_Upcomming_TripModel
 
 class My_Trip_Upcomming_TripAdapter(private val trips: List<My_Trip_Upcomming_TripModel>) :
     RecyclerView.Adapter<My_Trip_Upcomming_TripAdapter.TripViewHolder>() {

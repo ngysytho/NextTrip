@@ -2,6 +2,7 @@ package edu.poly.nexttrip
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import edu.poly.nexttrip.mytrip.MyTrip_CancelledFragment
 
 class MyTripPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
