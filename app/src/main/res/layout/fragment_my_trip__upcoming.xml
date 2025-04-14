@@ -1,0 +1,163 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Layout khi KHÔNG có chuyến -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/emptyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <!-- Icon -->
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/main_diadiemdulich"
+                android:layout_gravity="center" />
+
+            <!-- Lời chào -->
+            <TextView
+                android:id="@+id/txtNoTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:paddingTop="16dp"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <!-- Câu hỏi -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bắt đầu lên kế hoạch cho chuyến đi tiếp theo?"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingTop="24dp"
+                android:paddingBottom="12dp"
+                android:textColor="#000000" />
+
+            <!-- GỢI Ý DẠNG GRID 2 CỘT -->
+            <GridLayout
+                android:id="@+id/gridSuggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:padding="12dp"
+                android:rowOrderPreserved="false">
+
+                <!-- Ô 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/main_home" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tìm Nơi lưu trú"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:paddingTop="12dp"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <!-- Ô 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/main_nuocuong" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tìm Hoạt động"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:paddingTop="12dp"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <!-- Ô 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/main_flight" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tìm Chuyến bay"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:paddingTop="12dp"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <!-- Ô 4 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/main_batxe" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tìm Đưa đón sân bay"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:paddingTop="12dp"
+                        android:textColor="#000" />
+                </LinearLayout>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Layout khi CÓ chuyến đi -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTrip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>
