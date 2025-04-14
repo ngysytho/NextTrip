@@ -10,7 +10,7 @@ class MyTripPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> MyTrip_UpcomingFragment()    // Tab 1 - Sắp tới
-            1 -> MyTrip_CompletedFragment()   // Tab 2 - Hoàn tất
+            1 -> MyTrip_CancelledFragment()   // Tab 2 - Hoàn tất
             2 -> MyTrip_CancelledFragment()   // Tab 3 - Đã huỷ
             else -> Fragment()
         }
