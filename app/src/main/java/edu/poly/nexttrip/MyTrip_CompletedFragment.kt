@@ -1,59 +1,65 @@
 package edu.poly.nexttrip
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MyTrip_CompletedFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MyTrip_CompletedFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var emptyLayout: View
+    private lateinit var txtNoTripCompleted: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_my_trip__completed, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MyTrip_CompletedFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MyTrip_CompletedFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        txtNoTripCompleted = view.findViewById(R.id.txtNoTripCompleted)
+        recyclerView = view.findViewById(R.id.recyclerCompletedTrip)
+        emptyLayout = view.findViewById(R.id.completeLayout)
+
+        // Lấy tên người dùng từ SharedPreferences
+        val prefs = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        val userName = prefs.getString("username", "Tho N.") ?: "Tho N."
+        txtNoTripCompleted.text =
+            "Chào $userName. Quý khách không có đặt chỗ đã hoàn thành gần đây"
+
+        val trips = getCompletedTrips()
+
+        if (trips.isEmpty()) {
+            emptyLayout.visibility = View.VISIBLE
+            recyclerView.visibility = View.GONE
+        } else {
+            emptyLayout.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
+
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.adapter = My_Trip_Upcomming_TripAdapter(trips)
+        }
+    }
+
+    private fun getCompletedTrips(): List<My_Trip_Upcomming_TripModel> {
+        // ⚠️ Tạm thời trả về danh sách trống (test UI)
+        return emptyList()
+
+        // Có thể giả lập test:
+        /*
+        return listOf(
+            TripModel("Hà Nội", "01/01/2025", "03/01/2025"),
+            TripModel("Đà Nẵng", "15/02/2025", "20/02/2025")
+        )
+        */
     }
 }
