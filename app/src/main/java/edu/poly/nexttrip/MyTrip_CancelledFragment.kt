@@ -20,7 +20,8 @@ class MyTrip_CancelledFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_my_trip__completed, container, false)
+        // Sửa tên layout cho đúng nếu cần
+        return inflater.inflate(R.layout.fragment_my_trip__cancelled, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,9 +31,10 @@ class MyTrip_CancelledFragment : Fragment() {
         recyclerView = view.findViewById(R.id.MyTrip_Cancelled_recyclerCompletedTrip)
         emptyLayout = view.findViewById(R.id.MyTrip_Cancelled_completeLayout)
 
-        // Lấy tên người dùng từ SharedPreferences
-        val prefs = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
-        val userName = prefs.getString("username", "Tho N.") ?: "Tho N."
+        // 🔥 Đổi đúng key "user_session" thay vì "user_prefs"
+        val prefs = requireContext().getSharedPreferences("user_session", Context.MODE_PRIVATE)
+        val userName = prefs.getString("userName", "Tho N.") ?: "Tho N."
+
         txtNoTripCompleted.text =
             "Chào $userName. Quý khách không có đặt chỗ đã hủy gần đây"
 
@@ -51,15 +53,6 @@ class MyTrip_CancelledFragment : Fragment() {
     }
 
     private fun getCompletedTrips(): List<My_Trip_Upcomming_TripModel> {
-        // ⚠️ Tạm thời trả về danh sách trống (test UI)
         return emptyList()
-
-        // Có thể giả lập test:
-        /*
-        return listOf(
-            TripModel("Hà Nội", "01/01/2025", "03/01/2025"),
-            TripModel("Đà Nẵng", "15/02/2025", "20/02/2025")
-        )
-        */
     }
 }

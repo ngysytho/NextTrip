@@ -1,5 +1,6 @@
 package edu.poly.nexttrip
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,8 +35,11 @@ class MyTrip_UpcomingFragment : Fragment() {
         txtNoTrip = view.findViewById(R.id.MyTrip_UpComing_txtNoTrip)
 
         // 🧠 Lấy tên người dùng (ở đây hardcode, bạn có thể lấy từ SharedPreferences)
-        val userName = "Tho N"
-        txtNoTrip.text = "Xin chào $userName.. Quý khách không có chuyến đi sắp tới nào"
+        val prefs = requireContext().getSharedPreferences("user_session", Context.MODE_PRIVATE)
+        val userName = prefs.getString("userName", "Tho N.") ?: "Tho N."
+
+        txtNoTrip.text = "Chào $userName. Quý khách không có đặt chỗ đã hủy gần đây"
+
 
         // 🔄 Lấy danh sách chuyến đi sắp tới
         val listTrips = getUpcomingTrips()

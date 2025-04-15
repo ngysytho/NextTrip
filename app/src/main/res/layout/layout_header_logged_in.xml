@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/HeaderLoggedin_userName"
-        android:text="Chào mừng, Tho"
+        android:text="Chào mừng đến với NextTrip"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
