@@ -9,7 +9,7 @@
         android:fillViewport="true">
 
         <LinearLayout
-            android:id="@+id/emptyLayout"
+            android:id="@+id/MyTrip_UpComing_emptyLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -25,7 +25,7 @@
 
             <!-- Lời chào -->
             <TextView
-                android:id="@+id/txtNoTrip"
+                android:id="@+id/MyTrip_UpComing_txtNoTrip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -46,7 +46,7 @@
 
             <!-- GỢI Ý DẠNG GRID 2 CỘT -->
             <GridLayout
-                android:id="@+id/gridSuggestions"
+                android:id="@+id/MyTrip_UpComing_gridSuggestions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alignmentMode="alignMargins"
@@ -155,7 +155,7 @@
 
     <!-- Layout khi CÓ chuyến đi -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerTrip"
+        android:id="@+id/MyTrip_UpComing_recyclerTrip"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />

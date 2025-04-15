@@ -7,7 +7,7 @@
     tools:context=".HomeFragment">
 
     <SearchView
-        android:id="@+id/searchView"
+        android:id="@+id/Home_searchView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:queryHint="Tìm kiếm..."
@@ -20,12 +20,12 @@
         android:layout_width="0dp"
         android:layout_height="275dp"
         android:contentDescription="List of items displayed"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintTop_toBottomOf="@id/Home_searchView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_recyclerView1"
+        android:id="@+id/Home_main_recyclerView1"
         android:layout_width="411dp"
         android:layout_height="400dp"
         android:layout_marginTop="8dp"

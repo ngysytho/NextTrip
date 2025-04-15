@@ -6,35 +6,35 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/edtName"
+        android:id="@+id/Register_edtName"
         android:hint="Họ và tên"
         android:inputType="textPersonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/edtPhone"
+        android:id="@+id/Register_edtPhone"
         android:hint="Số điện thoại"
         android:inputType="phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/Register_edtEmail"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/edtPassword"
+        android:id="@+id/Register_edtPassword"
         android:hint="Mật khẩu"
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/Register_btnRegister"
         android:text="Đăng ký"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

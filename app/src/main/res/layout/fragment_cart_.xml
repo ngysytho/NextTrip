@@ -26,7 +26,7 @@
 
         <!-- Layout TRỐNG -->
         <LinearLayout
-            android:id="@+id/emptyLayout"
+            android:id="@+id/Cart_emptyLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -60,7 +60,7 @@
                     android:layout_marginBottom="32dp" />
 
                 <Button
-                    android:id="@+id/btnSearchTravel"
+                    android:id="@+id/Cart_btnSearchTravel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tìm kiếm du lịch"
@@ -71,7 +71,7 @@
 
         <!-- Layout CÓ DỮ LIỆU (RECYCLER VIEW) -->
         <LinearLayout
-            android:id="@+id/itemLayout"
+            android:id="@+id/Cart_itemLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -79,7 +79,7 @@
             android:visibility="gone">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerCart"
+                    android:id="@+id/Cart_recyclerCart"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
         </LinearLayout>

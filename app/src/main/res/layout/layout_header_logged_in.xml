@@ -5,7 +5,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/userName"
+        android:id="@+id/HeaderLoggedin_userName"
         android:text="Chào mừng, Tho"
         android:textColor="@android:color/white"
         android:textSize="18sp"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:layout_below="@id/userName"
+        android:layout_below="@id/HeaderLoggedin_userName"
         android:orientation="horizontal"
         android:layout_marginTop="8dp"
         android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/logout"
+        android:id="@+id/HeaderLoggedin_logout"
         android:text="Thoát"
         android:textColor="@android:color/white"
         android:textSize="14sp"

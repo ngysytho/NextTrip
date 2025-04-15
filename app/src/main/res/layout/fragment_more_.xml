@@ -6,13 +6,13 @@
 
     <!-- Header dynamic: sẽ load layout vào đây -->
     <FrameLayout
-        android:id="@+id/headerContainer"
+        android:id="@+id/More_headerContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <!-- RecyclerView danh sách mục -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerMore"
+        android:id="@+id/More_recyclerMore"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp" />

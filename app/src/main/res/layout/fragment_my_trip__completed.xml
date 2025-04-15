@@ -4,7 +4,7 @@
 
     <!-- Layout khi KHÔNG có chuyến -->
     <ScrollView
-        android:id="@+id/completeLayout"
+        android:id="@+id/MyTrip_Completed_completeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -25,7 +25,7 @@
 
             <!-- Lời chào -->
             <TextView
-                android:id="@+id/txtNoTripCompleted"
+                android:id="@+id/MyTrip_Completed_txtNoTripCompleted"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chào Tho N.. Quý khách không có đặt chỗ đã hoàn thành gần đây"
@@ -154,7 +154,7 @@
 
     <!-- Layout khi CÓ chuyến đi -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerCompletedTrip"
+        android:id="@+id/MyTrip_Completed_recyclerCompletedTrip"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />

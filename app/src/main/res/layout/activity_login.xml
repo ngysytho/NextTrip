@@ -7,28 +7,28 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/Login_edtEmail"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/edtPassword"
+        android:id="@+id/Login_edtPassword"
         android:hint="Mật khẩu"
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/Login_btnLogin"
         android:text="Đăng nhập"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"/>
 
     <Button
-        android:id="@+id/tvRegister"
+        android:id="@+id/Login_tvRegister"
         android:text="Chưa có tài khoản? Đăng ký"
         android:textColor="#6200EE"
         android:layout_width="match_parent"
