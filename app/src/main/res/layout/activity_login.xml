@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/tvRegister"
         android:text="Chưa có tài khoản? Đăng ký"
         android:textColor="#6200EE"

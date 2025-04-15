@@ -13,13 +13,6 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/edtNickName"
-        android:hint="User"
-        android:inputType="textPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
         android:id="@+id/edtPhone"
         android:hint="Số điện thoại"
         android:inputType="phone"
