@@ -63,9 +63,9 @@ class MoreFragment : Fragment() {
     private fun setupRecycler() {
         val items = listOf(
             MoreItem(R.drawable.main_more, "Danh sách yêu thích"),
-            MoreItem(R.drawable.main_more, "AgodaVIP"),
+            MoreItem(R.drawable.main_more, "NextTrip"),
             MoreItem(R.drawable.main_more, "Thông tin thẻ đã lưu của tôi"),
-            MoreItem(R.drawable.main_more, "Tiền Agoda", "0 đ"),
+            MoreItem(R.drawable.main_more, "Tiền Trip", "0 đ"),
             MoreItem(R.drawable.main_more, "Cashback", "0 đ"),
             MoreItem(R.drawable.main_more, "PointsMAX"),
             MoreItem(R.drawable.main_more, "Khuyến mãi"),

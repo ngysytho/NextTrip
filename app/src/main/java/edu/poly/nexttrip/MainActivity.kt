@@ -1,13 +1,9 @@
-package edu.poly.nexttrip.nexttrip.home
+package edu.poly.nexttrip
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
-import edu.poly.nexttrip.Cart_Fragment
-import edu.poly.nexttrip.MoreFragment
-import edu.poly.nexttrip.MyTrip_Fragment
-import edu.poly.nexttrip.R
 
 class MainActivity : AppCompatActivity() {
 
