@@ -46,7 +46,7 @@ class MoreFragment : Fragment() {
         headerContainer.addView(headerView)
 
         if (!isLoggedIn) {
-            val loginBtn = headerView.findViewById<Button>(R.id.Login_btnLogin)
+            val loginBtn = headerView.findViewById<Button>(R.id.HeaderLoggedOut_btnLogin)
             loginBtn.setOnClickListener {
                 startActivity(Intent(requireContext(), LoginActivity::class.java))
             }

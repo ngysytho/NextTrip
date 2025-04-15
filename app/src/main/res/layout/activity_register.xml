@@ -12,6 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
+    <EditText
+        android:id="@+id/Register_edtUser"
+        android:hint="Tên người dùng"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/Register_edtPhone"
         android:hint="Số điện thoại"

@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/desc"
+        android:id="@+id/HeaderLoggedOut_desc"
         android:text="Tiếp cận các ưu đãi chỉ dành cho thành viên"
         android:textColor="@android:color/white"
         android:textSize="14sp"

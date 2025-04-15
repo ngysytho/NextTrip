@@ -14,6 +14,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var edtName: EditText
     private lateinit var edtPhone: EditText
+    private lateinit var edtUser: EditText
     private lateinit var edtEmail: EditText
     private lateinit var edtPassword: EditText
     private lateinit var btnRegister: Button
@@ -27,25 +28,27 @@ class RegisterActivity : AppCompatActivity() {
         edtEmail = findViewById(R.id.Register_edtEmail)
         edtPassword = findViewById(R.id.Register_edtPassword)
         btnRegister = findViewById(R.id.Register_btnRegister)
+        edtUser = findViewById(R.id.Register_edtUser)
 
         btnRegister.setOnClickListener {
             val name = edtName.text.toString().trim()
+            val user = edtUser.text.toString().trim()
             val phone = edtPhone.text.toString().trim()
             val email = edtEmail.text.toString().trim()
             val password = edtPassword.text.toString().trim()
 
-            if (name.isEmpty() || phone.isEmpty() || email.isEmpty() || password.length < 6) {
+            if (name.isEmpty() || phone.isEmpty() || email.isEmpty() || password.length < 6 || user.isEmpty()) {
                 Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin hợp lệ", Toast.LENGTH_SHORT).show()
             } else {
-                registerUser(name, phone, email, password)
+                registerUser(name,user, phone, email, password)
             }
         }
     }
 
-    private fun registerUser(name: String, phone: String, email: String, password: String) {
+    private fun registerUser(name: String,user: String, phone: String, email: String, password: String) {
         lifecycleScope.launch {
             try {
-                val request = AuthRequest(name, phone, email, password)
+                val request = AuthRequest(name,user, phone, email, password)
                 val response = RetrofitClient.instance.register(request)
                 if (response.isSuccessful) {
                     Toast.makeText(this@RegisterActivity, "Đăng ký thành công", Toast.LENGTH_SHORT).show()
