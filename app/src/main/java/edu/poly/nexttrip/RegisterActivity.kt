@@ -22,11 +22,11 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        edtName = findViewById(R.id.edtName)
-        edtPhone = findViewById(R.id.edtPhone)
-        edtEmail = findViewById(R.id.edtEmail)
-        edtPassword = findViewById(R.id.edtPassword)
-        btnRegister = findViewById(R.id.btnRegister)
+        edtName = findViewById(R.id.Register_edtName)
+        edtPhone = findViewById(R.id.Register_edtPhone)
+        edtEmail = findViewById(R.id.Register_edtEmail)
+        edtPassword = findViewById(R.id.Register_edtPassword)
+        btnRegister = findViewById(R.id.Register_btnRegister)
 
         btnRegister.setOnClickListener {
             val name = edtName.text.toString().trim()

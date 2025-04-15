@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        val tvRegisterActivity = findViewById<Button>(R.id.tvRegister)
+        val tvRegisterActivity = findViewById<Button>(R.id.Login_tvRegister)
         tvRegisterActivity.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)

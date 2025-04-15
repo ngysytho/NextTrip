@@ -22,11 +22,11 @@ class Cart_Fragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val emptyLayout = view.findViewById<LinearLayout>(R.id.emptyLayout)
-        val itemLayout = view.findViewById<LinearLayout>(R.id.itemLayout)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerCart)
+        val emptyLayout = view.findViewById<LinearLayout>(R.id.Cart_emptyLayout)
+        val itemLayout = view.findViewById<LinearLayout>(R.id.Cart_itemLayout)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.Cart_recyclerCart)
         val headerText = view.findViewById<TextView>(R.id.cartHeader)
-        val searchBtn = view.findViewById<Button>(R.id.btnSearchTravel)
+        val searchBtn = view.findViewById<Button>(R.id.Cart_btnSearchTravel)
 
         searchBtn.setOnClickListener {
             Toast.makeText(requireContext(), "Tìm kiếm du lịch được nhấn", Toast.LENGTH_SHORT).show()

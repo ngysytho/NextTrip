@@ -24,8 +24,8 @@ class MyTrip_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tabLayout = view.findViewById(R.id.tabLayout_booking)
-        viewPager = view.findViewById(R.id.viewPager_booking)
+        tabLayout = view.findViewById(R.id.MyTrip_tabLayout_booking)
+        viewPager = view.findViewById(R.id.MyTrip_viewPager_booking)
 
         // Gán adapter cho ViewPager2
         val adapter = MyTripPagerAdapter(this)

@@ -26,9 +26,9 @@ class MyTrip_CancelledFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        txtNoTripCompleted = view.findViewById(R.id.txtNoTripCompleted)
-        recyclerView = view.findViewById(R.id.recyclerCompletedTrip)
-        emptyLayout = view.findViewById(R.id.completeLayout)
+        txtNoTripCompleted = view.findViewById(R.id.MyTrip_Cancelled_txtNoTripCompleted)
+        recyclerView = view.findViewById(R.id.MyTrip_Cancelled_recyclerCompletedTrip)
+        emptyLayout = view.findViewById(R.id.MyTrip_Cancelled_completeLayout)
 
         // Lấy tên người dùng từ SharedPreferences
         val prefs = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)

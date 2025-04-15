@@ -22,7 +22,7 @@ class MyTrip_CompletedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Handle button click
-        val searchButton = view.findViewById<Button>(R.id.btnSearchTravel)
+        val searchButton = view.findViewById<Button>(R.id.Cart_btnSearchTravel)
         searchButton.setOnClickListener {
             Toast.makeText(requireContext(), "Tìm kiếm du lịch được nhấn", Toast.LENGTH_SHORT).show()
             // TODO: Chuyển sang màn hình tìm kiếm du lịch tại đây

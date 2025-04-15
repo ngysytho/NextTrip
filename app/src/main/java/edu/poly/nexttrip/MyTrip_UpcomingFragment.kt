@@ -29,9 +29,9 @@ class MyTrip_UpcomingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Ánh xạ các view
-        emptyLayout = view.findViewById(R.id.emptyLayout)
-        tripRecyclerView = view.findViewById(R.id.recyclerTrip)
-        txtNoTrip = view.findViewById(R.id.txtNoTrip)
+        emptyLayout = view.findViewById(R.id.MyTrip_UpComing_emptyLayout)
+        tripRecyclerView = view.findViewById(R.id.MyTrip_UpComing_recyclerTrip)
+        txtNoTrip = view.findViewById(R.id.MyTrip_UpComing_txtNoTrip)
 
         // 🧠 Lấy tên người dùng (ở đây hardcode, bạn có thể lấy từ SharedPreferences)
         val userName = "Tho N"

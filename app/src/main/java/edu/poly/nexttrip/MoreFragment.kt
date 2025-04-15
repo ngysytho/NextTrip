@@ -25,8 +25,8 @@ class MoreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        headerContainer = view.findViewById(R.id.headerContainer)
-        recyclerView = view.findViewById(R.id.recyclerMore)
+        headerContainer = view.findViewById(R.id.More_headerContainer)
+        recyclerView = view.findViewById(R.id.More_recyclerMore)
 
         setupHeader()
         setupRecycler()
@@ -46,12 +46,12 @@ class MoreFragment : Fragment() {
         headerContainer.addView(headerView)
 
         if (!isLoggedIn) {
-            val loginBtn = headerView.findViewById<Button>(R.id.btnLogin)
+            val loginBtn = headerView.findViewById<Button>(R.id.Login_btnLogin)
             loginBtn.setOnClickListener {
                 startActivity(Intent(requireContext(), LoginActivity::class.java))
             }
         } else {
-            val logoutBtn = headerView.findViewById<TextView>(R.id.logout)
+            val logoutBtn = headerView.findViewById<TextView>(R.id.HeaderLoggedin_logout)
             logoutBtn.setOnClickListener {
                 prefs.edit().clear().apply()
                 Toast.makeText(requireContext(), "Đã đăng xuất", Toast.LENGTH_SHORT).show()
