@@ -79,6 +79,3 @@ Please ensure your code follows Kotlin coding conventions and includes appropria
 
 License information is not specified in this repository. All rights reserved by the owner.
 
-## Acknowledgments
-
-[If applicable, list any third-party libraries, resources, or individuals who deserve acknowledgment here.]
